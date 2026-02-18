@@ -48,8 +48,8 @@ header {
     flex-direction: column;
     align-items: center;
     border-bottom: 1px solid var(--c-border);
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
     position: relative;
 }
 
@@ -61,11 +61,11 @@ header {
     background: none;
     border: 2px solid #565758;
     color: #818384;
-    padding: clamp(8px, 1.5vh, 15px) clamp(12px, 2vw, 25px);
-    font-size: clamp(16px, 2.5vh, 24px);
+    padding: clamp(4px, 1vh, 8px) clamp(8px, 1.5vw, 15px);
+    font-size: clamp(12px, 1.8vh, 16px);
     font-weight: 800;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 4px;
     transition: all 0.2s;
     z-index: 10;
 }
@@ -78,20 +78,20 @@ header {
 header > div:first-of-type {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 header img {
-    height: 50px;
+    height: 30px;
     width: auto;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
 #game-title {
     font-weight: 800;
-    font-size: clamp(24px, 5vh, 50px);
+    font-size: clamp(20px, 4vh, 36px);
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     margin: 0;
@@ -104,9 +104,9 @@ header img {
 }
 
 #game-subtitle {
-    font-size: clamp(10px, 1.5vh, 14px);
+    font-size: clamp(8px, 1.2vh, 11px);
     color: #818384;
-    margin-top: 5px;
+    margin-top: 2px;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
@@ -117,9 +117,9 @@ header img {
     background-color: #e74c3c;
     color: white;
     border: none;
-    margin-top: 15px;
-    padding: 15px 40px;
-    font-size: 18px;
+    margin-top: 8px;
+    padding: 8px 20px;
+    font-size: 14px;
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
@@ -144,8 +144,8 @@ header img {
     gap: 5px;
     flex-grow: 1;
     aspect-ratio: 5 / 6;
-    max-height: 70vh;
-    margin-bottom: 10px;
+    max-height: 75vh;
+    margin-bottom: 5px;
     position: relative;
 }
 
@@ -161,7 +161,7 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(1.5rem, 4vh, 4rem);
+    font-size: clamp(2rem, 5vh, 5rem);
     font-weight: bold;
     text-transform: uppercase;
     user-select: none;
@@ -259,7 +259,7 @@ header img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: clamp(2px, 0.8vh, 4px);
+    gap: 3px;
     margin-bottom: 5px;
 }
 
@@ -267,14 +267,14 @@ header img {
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 4px;
+    gap: 3px;
 }
 
 .key {
     font-family: inherit;
     font-weight: bold;
     border: 0;
-    height: clamp(35px, 5vh, 50px);
+    height: 32px;
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--c-key-bg);
@@ -284,7 +284,7 @@ header img {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-size: clamp(10px, 1.8vh, 18px);
+    font-size: 14px;
     transition: background-color 0.1s ease, transform 0.05s;
     -webkit-tap-highlight-color: transparent;
 }
@@ -295,7 +295,7 @@ header img {
 
 .key.big {
     flex: 1.5;
-    font-size: clamp(10px, 1.8vh, 18px);
+    font-size: 12px;
 }
 
 .key[data-state='correct'] {
@@ -326,10 +326,10 @@ header img {
 .toast {
     background-color: #eee;
     color: #111;
-    padding: clamp(12px, 1.5vh, 20px) clamp(20px, 3vh, 40px);
+    padding: clamp(8px, 1vh, 12px) clamp(12px, 2vh, 20px);
     border-radius: 4px;
     font-weight: bold;
-    font-size: clamp(14px, 2.5vh, 28px);
+    font-size: clamp(12px, 2vh, 18px);
     opacity: 1;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     text-align: center;
@@ -365,8 +365,8 @@ header img {
     background-color: #121213;
     border: 1px solid #565758;
     border-radius: 4px;
-    padding: clamp(30px, 5vh, 50px);
-    width: clamp(320px, 85vw, 1000px);
+    padding: clamp(20px, 4vh, 30px);
+    width: clamp(280px, 80vw, 800px);
     max-height: 90vh;
     overflow-y: auto;
     text-align: center;
@@ -374,12 +374,12 @@ header img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     position: relative;
 }
 
 .modal-header {
-    font-size: clamp(30px, 6vh, 60px);
+    font-size: clamp(24px, 5vh, 40px);
     font-weight: 900;
     margin: 0;
     text-transform: uppercase;
@@ -399,8 +399,8 @@ header img {
 }
 
 #result-word {
-    font-size: clamp(20px, 4vh, 40px);
-    margin: 10px 0;
+    font-size: clamp(18px, 3vh, 28px);
+    margin: 5px 0;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #aaa;
@@ -414,8 +414,8 @@ header img {
 .stat-grid {
     display: flex;
     justify-content: center;
-    gap: clamp(20px, 4vw, 60px);
-    margin: 20px 0;
+    gap: clamp(15px, 3vw, 40px);
+    margin: 10px 0;
     width: 100%;
 }
 
@@ -426,15 +426,15 @@ header img {
 }
 
 .stat-number {
-    font-size: clamp(36px, 7vh, 72px);
+    font-size: clamp(28px, 6vh, 48px);
     font-weight: bold;
     line-height: 1;
 }
 
 .stat-label {
-    font-size: clamp(12px, 2vh, 24px);
+    font-size: clamp(10px, 1.5vh, 16px);
     color: #818384;
-    margin-top: 10px;
+    margin-top: 5px;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -443,13 +443,13 @@ header img {
     background-color: var(--c-correct);
     color: white;
     border: none;
-    padding: 15px 0;
+    padding: 10px 0;
     width: 100%;
     border-radius: 4px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 5px;
     text-transform: uppercase;
     transition: background-color 0.2s;
 }
@@ -462,13 +462,13 @@ header img {
     background-color: #3a3a3c;
     color: #ffffff;
     border: 1px solid #565758;
-    padding: 15px 0;
+    padding: 10px 0;
     width: 100%;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 8px;
     text-transform: uppercase;
     transition: background-color 0.2s;
 }
@@ -480,12 +480,12 @@ header img {
 
 #close-changelog {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 5px;
+    right: 10px;
     background: none;
     border: none;
     color: white;
-    font-size: 32px;
+    font-size: 24px;
     cursor: pointer;
     transition: color 0.2s;
 }
@@ -497,42 +497,55 @@ header img {
 .changelog-list {
     text-align: left;
     width: 100%;
-    font-size: clamp(16px, 2.5vh, 22px);
-    line-height: 1.6;
+    font-size: clamp(14px, 2vh, 18px);
+    line-height: 1.5;
     color: #ccc;
-    margin-top: 20px;
+    margin-top: 10px;
     padding-left: 20px;
 }
 
 .changelog-list li {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 @media (max-width: 600px) {
     header > div:first-of-type {
-        gap: 5px;
+        gap: 3px;
     }
     
     header img {
-        height: 35px;
+        height: 25px;
     }
     
     #game-title {
-        font-size: 20px;
+        font-size: 18px;
+    }
+    
+    .key {
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .key.big {
+        font-size: 10px;
     }
 }
 
 @media (max-height: 650px) {
     .key {
-        height: 35px;
+        height: 26px;
+        font-size: 11px;
     }
+    
     #game-title {
-        font-size: 20px;
+        font-size: 18px;
     }
+    
     #board-container {
-        max-height: 65vh;
+        max-height: 70vh;
     }
+    
     header img {
-        height: 30px;
+        height: 22px;
     }
 }
