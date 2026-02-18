@@ -144,7 +144,7 @@ header img {
     gap: 5px;
     flex-grow: 1;
     aspect-ratio: 5 / 6;
-    max-height: 60vh;
+    max-height: 70vh;
     margin-bottom: 10px;
     position: relative;
 }
@@ -259,22 +259,22 @@ header img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: clamp(4px, 1vh, 8px);
-    margin-bottom: 10px;
+    gap: clamp(2px, 0.8vh, 4px);
+    margin-bottom: 5px;
 }
 
 .keyboard-row {
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 .key {
     font-family: inherit;
     font-weight: bold;
     border: 0;
-    height: clamp(45px, 7vh, 70px);
+    height: clamp(35px, 5vh, 50px);
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--c-key-bg);
@@ -284,7 +284,7 @@ header img {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-size: clamp(12px, 2vh, 20px);
+    font-size: clamp(10px, 1.8vh, 18px);
     transition: background-color 0.1s ease, transform 0.05s;
     -webkit-tap-highlight-color: transparent;
 }
@@ -524,16 +524,15 @@ header img {
 
 @media (max-height: 650px) {
     .key {
-        height: 45px;
+        height: 35px;
     }
     #game-title {
         font-size: 20px;
     }
     #board-container {
-        max-height: 55vh;
+        max-height: 65vh;
     }
     header img {
         height: 30px;
     }
 }
-
