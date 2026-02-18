@@ -13,14 +13,15 @@
     <meta property="og:url" content="https://chipswordle.web.app/">
     <meta property="og:title" content="Chips Wordle - Infinite Wordle Game">
     <meta property="og:description" content="Play Chips Wordle, a fan-made infinite Wordle game. Test your vocabulary with unlimited 5-letter word puzzles.">
-    <meta property="og:image" content="https://chipswordle.web.app/og-image.png">
+    <meta property="og:image" content="https://chipswordle.web.app/images/logo.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://chipswordle.web.app/">
     <meta property="twitter:title" content="Chips Wordle - Infinite Wordle Game">
     <meta property="twitter:description" content="Play Chips Wordle, a fan-made infinite Wordle game. Test your vocabulary with unlimited 5-letter word puzzles.">
-    <meta property="twitter:image" content="https://chipswordle.web.app/twitter-image.png">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="twitter:image" content="https://chipswordle.web.app/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
     <link rel="canonical" href="https://chipswordle.web.app/">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,7 +31,10 @@
     <div id="game-layout">
         <header>
             <button id="changelog-btn" onclick="toggleChangelog()">v1.4</button>
-            <h1 id="game-title">CHIPS WORDLE</h1>
+            <div style="display: flex; align-items: center; gap: 10px; justify-content: center;">
+                <img src="images/logo.png" alt="Chips Wordle Logo" style="height: 50px; width: auto;">
+                <h1 id="game-title">CHIPS WORDLE</h1>
+            </div>
             <div id="game-subtitle">A fan made infinite wordle game by Chip Hill</div>
             <button id="give-up-btn" onclick="handleGiveUp()">GIVE UP</button>
         </header>
