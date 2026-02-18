@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chips Wordle - Infinite Wordle Game by Chip Hill</title>
+    <meta name="title" content="Chips Wordle - Infinite Wordle Game by Chip Hill">
+    <meta name="description" content="Play Chips Wordle, a fan-made infinite Wordle game. Test your vocabulary with unlimited 5-letter word puzzles. Created by Chip Hill.">
+    <meta name="keywords" content="chips wordle, wordle game, word puzzle, infinite wordle, chip hill wordle, word game">
+    <meta name="author" content="Chip Hill">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chipswordle.web.app/">
+    <meta property="og:title" content="Chips Wordle - Infinite Wordle Game">
+    <meta property="og:description" content="Play Chips Wordle, a fan-made infinite Wordle game. Test your vocabulary with unlimited 5-letter word puzzles.">
+    <meta property="og:image" content="https://chipswordle.web.app/og-image.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chipswordle.web.app/">
+    <meta property="twitter:title" content="Chips Wordle - Infinite Wordle Game">
+    <meta property="twitter:description" content="Play Chips Wordle, a fan-made infinite Wordle game. Test your vocabulary with unlimited 5-letter word puzzles.">
+    <meta property="twitter:image" content="https://chipswordle.web.app/twitter-image.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://chipswordle.web.app/">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="toast-container"></div>
+
+    <div id="game-layout">
+        <header>
+            <button id="changelog-btn" onclick="toggleChangelog()">v1.4</button>
+            <h1 id="game-title">CHIPS WORDLE</h1>
+            <div id="game-subtitle">A fan made infinite wordle game by Chip Hill</div>
+            <button id="give-up-btn" onclick="handleGiveUp()">GIVE UP</button>
+        </header>
+
+        <div id="board-container"></div>
+        <div id="keyboard"></div>
+    </div>
+
+    <div id="modal-overlay" class="overlay">
+        <div class="modal">
+            <h2 id="modal-title" class="modal-header"></h2>
+            
+            <div id="result-word">
+                The word was: <span id="word-reveal"></span>
+            </div>
+            
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-played">0</div>
+                    <div class="stat-label">Played</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-win">0</div>
+                    <div class="stat-label">Wins</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-ratio">0%</div>
+                    <div class="stat-label">Win %</div>
+                </div>
+            </div>
+
+            <button class="play-btn" onclick="handlePlayAgain()">PLAY AGAIN</button>
+            <button class="reset-btn" onclick="resetStats()">RESET STATS</button>
+        </div>
+    </div>
+
+    <div id="changelog-overlay" class="overlay">
+        <div class="modal" style="align-items: flex-start;">
+            <button id="close-changelog" onclick="toggleChangelog()">&times;</button>
+            <h2 style="margin-bottom: 10px;">CHANGELOG v1.4</h2>
+            <ul class="changelog-list">
+                <li>Made Version button bigger and bolder.</li>
+                <li>Changelog box now scales to fit larger screens.</li>
+                <li>Added "You Won" & "You Lost" toast notifications.</li>
+                <li>Added "Knock Off" animation for Play Again.</li>
+                <li>Added subtitle credits.</li>
+                <li>Added a massive Red Give Up button.</li>
+                <li>Added a Reset Stats button.</li>
+                <li>Redesigned buttons to be square and larger.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Chips Wordle",
+        "url": "https://chipswordle.web.app/",
+        "description": "A fan-made infinite Wordle game by Chip Hill",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "author": {
+            "@type": "Person",
+            "name": "Chip Hill"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Infinite word puzzles",
+            "5-letter word guessing",
+            "Keyboard support",
+            "Touch screen friendly"
+        ]
+    }
+    </script>
+</body>
+</html>
