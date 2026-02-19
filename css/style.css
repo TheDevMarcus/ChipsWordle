@@ -61,7 +61,7 @@ body::before {
     width: 100%;
     height: 100%;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     position: relative;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -209,13 +209,14 @@ header img:hover {
 #board-container {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
-    gap: 8px;
+    gap: clamp(4px, 1.5vh, 12px);
     flex-grow: 1;
     aspect-ratio: 5 / 6;
-    max-height: 70vh;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: min(70vh, 700px);
+    margin: 0 auto 20px auto;
     position: relative;
-    padding: 10px;
+    padding: clamp(8px, 2vh, 20px);
     background: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     backdrop-filter: blur(5px);
@@ -224,7 +225,7 @@ header img:hover {
 .row {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
+    gap: clamp(4px, 1.5vh, 12px);
 }
 
 .tile {
@@ -233,7 +234,7 @@ header img:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(2rem, 5vh, 5rem);
+    font-size: clamp(1.8rem, min(8vh, 8vw), 5rem);
     font-weight: bold;
     text-transform: uppercase;
     user-select: none;
@@ -243,7 +244,7 @@ header img:hover {
     transition: all 0.2s;
     position: relative;
     overflow: visible;
-    border-radius: 8px;
+    border-radius: clamp(6px, 1.5vh, 12px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -256,7 +257,7 @@ header img:hover {
     right: 0;
     bottom: 0;
     background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent 70%);
-    border-radius: 6px;
+    border-radius: clamp(5px, 1.2vh, 10px);
     pointer-events: none;
 }
 
@@ -344,11 +345,12 @@ header img:hover {
 
 #keyboard {
     width: 100%;
+    max-width: min(800px, 100%);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: clamp(4px, 1vh, 10px);
     margin-bottom: 5px;
-    padding: 10px;
+    padding: clamp(8px, 1.5vh, 15px);
     background: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     backdrop-filter: blur(5px);
@@ -358,15 +360,15 @@ header img:hover {
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 6px;
+    gap: clamp(3px, 0.8vw, 8px);
 }
 
 .key {
     font-family: inherit;
     font-weight: bold;
     border: none;
-    height: 45px;
-    border-radius: 8px;
+    height: clamp(35px, 7vh, 55px);
+    border-radius: clamp(6px, 1.2vh, 10px);
     cursor: pointer;
     background: linear-gradient(135deg, var(--c-key-bg), #6b6d70);
     color: var(--c-text);
@@ -375,7 +377,7 @@ header img:hover {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: clamp(12px, 2.5vh, 18px);
     transition: all 0.2s var(--animation-smooth);
     -webkit-tap-highlight-color: transparent;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.2);
@@ -411,7 +413,7 @@ header img:hover {
 
 .key.big {
     flex: 1.5;
-    font-size: 14px;
+    font-size: clamp(10px, 2vh, 14px);
 }
 
 .key[data-state='correct'] {
@@ -705,10 +707,51 @@ header img:hover {
     font-weight: bold;
 }
 
-@media (max-width: 600px) {
+/* Ultra-wide screens (larger than 1400px) */
+@media (min-width: 1400px) {
+    #board-container {
+        max-width: min(80vh, 800px);
+    }
+    
+    .tile {
+        font-size: clamp(3rem, 10vh, 6rem);
+    }
+}
+
+/* Large screens (1200px - 1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    #board-container {
+        max-width: min(75vh, 700px);
+    }
+    
+    .tile {
+        font-size: clamp(2.5rem, 9vh, 5.5rem);
+    }
+}
+
+/* Medium screens (900px - 1199px) */
+@media (min-width: 900px) and (max-width: 1199px) {
+    #board-container {
+        max-width: min(70vh, 600px);
+    }
+    
+    .tile {
+        font-size: clamp(2.2rem, 8vh, 5rem);
+    }
+}
+
+/* Small screens (600px - 899px) */
+@media (min-width: 600px) and (max-width: 899px) {
     #game-layout {
-        padding: 10px;
-        border-radius: 20px;
+        padding: 15px;
+    }
+    
+    #board-container {
+        max-width: min(65vh, 500px);
+    }
+    
+    .tile {
+        font-size: clamp(1.8rem, 7vh, 4rem);
     }
     
     header > div:first-of-type {
@@ -720,11 +763,51 @@ header img:hover {
     }
     
     #game-title {
-        font-size: 20px;
+        font-size: 22px;
     }
     
     .key {
-        height: 35px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Very small screens (under 600px) */
+@media (max-width: 599px) {
+    #game-layout {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 20px;
+    }
+    
+    #board-container {
+        max-width: min(85vw, 450px);
+        gap: clamp(3px, 1vh, 8px);
+    }
+    
+    .row {
+        gap: clamp(3px, 1vh, 8px);
+    }
+    
+    .tile {
+        font-size: clamp(1.5rem, 6vh, 2.5rem);
+        border-radius: clamp(4px, 1vh, 8px);
+    }
+    
+    header > div:first-of-type {
+        gap: 8px;
+    }
+    
+    header img {
+        height: 25px;
+    }
+    
+    #game-title {
+        font-size: 18px;
+    }
+    
+    .key {
+        height: 38px;
         font-size: 13px;
     }
     
@@ -733,21 +816,103 @@ header img:hover {
     }
 }
 
-@media (max-height: 650px) {
-    .key {
-        height: 30px;
-        font-size: 12px;
+/* Extra small screens (under 400px) */
+@media (max-width: 399px) {
+    #board-container {
+        max-width: 95vw;
+        gap: 2px;
     }
     
-    #game-title {
-        font-size: 20px;
+    .row {
+        gap: 2px;
+    }
+    
+    .tile {
+        font-size: clamp(1.2rem, 5vh, 2rem);
+        border-radius: 4px;
+        border-width: 1px;
+    }
+    
+    .key {
+        height: 35px;
+        font-size: 11px;
+    }
+    
+    .key.big {
+        font-size: 9px;
+    }
+    
+    #changelog-btn {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+}
+
+/* Landscape mode on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    #game-layout {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 8px;
+    }
+    
+    header {
+        width: 25%;
+        border-bottom: none;
+        border-right: 2px solid rgba(255, 255, 255, 0.1);
+        padding-right: 15px;
+        margin-right: 15px;
     }
     
     #board-container {
-        max-height: 65vh;
+        width: 50%;
+        max-width: 50vh;
+        margin: 0;
     }
     
-    header img {
-        height: 25px;
+    #keyboard {
+        width: 25%;
+        margin: 0;
+    }
+    
+    .keyboard-row {
+        flex-direction: column;
+    }
+    
+    .key {
+        height: auto;
+        min-height: 40px;
+        width: 100%;
+    }
+}
+
+/* Short screens (netbooks, etc) */
+@media (max-height: 700px) and (min-width: 800px) {
+    #board-container {
+        max-width: min(60vh, 600px);
+    }
+    
+    .tile {
+        font-size: clamp(1.8rem, 6vh, 4rem);
+    }
+    
+    .key {
+        height: 40px;
+    }
+}
+
+/* Tall screens (very high resolution) */
+@media (min-height: 1200px) {
+    #board-container {
+        max-width: min(60vh, 800px);
+    }
+    
+    .tile {
+        font-size: clamp(3rem, 8vh, 6rem);
+    }
+    
+    .key {
+        height: 60px;
+        font-size: 20px;
     }
 }
